@@ -1,25 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ServerBar from './Components/ServerBar'
+import { Box, Flex } from "@chakra-ui/react"
+var faker = require('faker');
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Flex minH="100vh" alignItems="stretch" height="100%">
+      <Box height="100%" flex="1">
+        <ServerBar servers={[{name: "wow", image: faker.image.imageUrl}, {name: "wow", image: faker.image.imageUrl}]}/>
+      </Box>
+    </Flex>
   );
 }
 
